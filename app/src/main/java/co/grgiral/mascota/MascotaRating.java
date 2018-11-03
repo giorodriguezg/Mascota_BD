@@ -22,7 +22,10 @@ public class MascotaRating extends AppCompatActivity{
         setContentView(R.layout.mascota_rating);
         Toolbar toolbar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(toolbar);
+        //toolbar.setLogo(R.drawable.icons8_cat_footprint_24);
+        toolbar.setTitle("Macotas");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listaMascotas = (RecyclerView) findViewById(R.id.rvMascotasDummy);
         LinearLayoutManager llm = new LinearLayoutManager(this);

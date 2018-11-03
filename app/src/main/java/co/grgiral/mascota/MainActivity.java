@@ -1,75 +1,111 @@
 package co.grgiral.mascota;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private android.support.v7.widget.Toolbar toolbar;
+    private TabLayout tabLayout ;
+    private ViewPager viewPager;
     SwipeRefreshLayout sfiMiIndicadorRefresh;
     ListView lstMiLista;
-    Adapter adapter;
-    private RecyclerView listaMascotas;
-    ArrayList<Mascota> mascotas;
-    public MascotaAdaptador adaptador;
+    private Intent i;
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.miActionBar);
 
-        listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        //toolbar.setLogo(R.drawable.icons8_cat_footprint_24);
+        //toolbar.setTitle("Macotas");
+        //LinearLayoutManager llm = new LinearLayoutManager(this);
+        //llm.setOrientation(LinearLayoutManager.VERTICAL);
+        toolbar= (Toolbar) findViewById(R.id.toolbar);
+
+        if(toolbar!= null){
+            setSupportActionBar(toolbar);
+        }
+        tabLayout= (TabLayout) findViewById(R.id.tabLayout);
+        viewPager= (ViewPager) findViewById(R.id.viewPager);
+        setUpViewPager();
         //GridLayoutManager glm = new GridLayoutManager(this,3);
-        listaMascotas.setLayoutManager(llm);
-        inicializarListaMascotas();
-        inicializarAdaptador();
-    }
-    public void inicializarListaMascotas(){
-
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota("Tommi", 1, 21 , R.drawable.tommi));
-        mascotas.add(new Mascota("Garfield", 1, 3 , R.drawable.garfield));
-        mascotas.add(new Mascota("Pikachu", 1, 2 , R.drawable.pikachu));
-        mascotas.add(new Mascota("Scobydu", 1, 5 , R.drawable.scobydu));
-        mascotas.add(new Mascota("Huesos", 1, 11 , R.drawable.huesos));
-        mascotas.add(new Mascota("Plutto", 1, 13 , R.drawable.plutto));
-        mascotas.add(new Mascota("Lollipop", 1, 1 , R.drawable.lollipop));
+        //listaMascotas.setLayoutManager(llm);
 
 
+
+        //inicializarAdaptador();
     }
 
-    public void irRating(View v){
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opciones,menu);
+        return true;
+    }
 
-        for (Mascota mascota: mascotas) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.mContacto:
+                i = new Intent(this, Contacto.class);
+                break;
+            case R.id.mAcercaDe:
+                i = new Intent(this, ActivityAcercaDe.class);
+                break;
+            case R.id.mRating:
+                i= new Intent(this,MascotaRating.class);
+                break;
 
         }
-        Intent i = new Intent(this, MascotaRating.class);
+
         startActivity(i);
-
-    }
-    public void inicializarAdaptador(){
-
-        adaptador= new MascotaAdaptador(mascotas,this);
-        listaMascotas.setAdapter(adaptador);
+        return super.onOptionsItemSelected(item);
     }
 
+
+
+
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.icons8_cat_footprint_24);
+        tabLayout.getTabAt(1).setIcon(R.drawable.icons8_dog_bone_32);
+
+    }
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments= new ArrayList<>();
+        fragments.add(new FragmentHome());
+        fragments.add(new FragmentPerfil());
+        return fragments;
+    }
 
 
 

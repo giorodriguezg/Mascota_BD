@@ -6,4 +6,7 @@
     <dimen name="card_medida">200dp</dimen>
     <dimen name="card_height">200dp</dimen>
     <dimen name="card_titulo">20dp</dimen>
+    <dimen name="dnombre">50dp</dimen>
+    <dimen name="dmensaje">50dp</dimen>
+    <dimen name="text_margin">140dp</dimen>
 </resources>

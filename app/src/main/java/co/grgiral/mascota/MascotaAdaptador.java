@@ -1,5 +1,6 @@
 package co.grgiral.mascota;
 import android.app.Activity;
+import android.app.admin.DevicePolicyManager;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -50,6 +51,8 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         holder.ibLikes.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Toast.makeText(activity, "diste like a: "+mascota.getNombre(), Toast.LENGTH_SHORT).show();
+                DevicePolicyManager mDPM;
+
                 mascota.setLikes(mascota.getLikes()+1);
 
             }
