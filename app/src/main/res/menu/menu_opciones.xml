@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/mContacto"
+        android:title="@string/menu_contacto"
+        android:orderInCategory="100"></item>
+    <item android:id="@+id/mAcercaDe"
+        android:title="@string/menu_acercade"
+        android:orderInCategory="101"></item>
+    <item
+     android:id="@+id/mRating"
+        android:icon="@drawable/star_hotel"
+        android:title="fdsaf"
+        app:showAsAction="always"
+        android:scaleType="centerCrop">
+    </item>
+</menu>

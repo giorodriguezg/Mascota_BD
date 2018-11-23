@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascotaPerfil"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="3dp">
+
+        <ImageView
+            android:id="@+id/imgMascotaPerfil"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+
+            android:src="@drawable/pikachu"
+
+            />
+
+        <RelativeLayout
+            android:background="@color/colorfondo"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/tvlikesperfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="43dp"
+                android:scaleType="centerCrop"
+                android:text="2"
+                android:textSize="25dp"
+                android:adjustViewBounds="true"
+
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="43dp"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/icons8_dog_bone_48_perfil"
+                android:layout_width="38dp"
+                android:adjustViewBounds="true"
+
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icons8_dog_bone_48"
+                tools:ignore="RtlCompat" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
