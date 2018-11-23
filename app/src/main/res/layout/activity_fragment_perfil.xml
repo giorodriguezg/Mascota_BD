@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentPerfil"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_centerHorizontal="true">
 
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/circularImage"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="70dp"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:src="@drawable/pikachu"
@@ -26,7 +27,8 @@
         android:text="@string/nombre_mascota"
         android:textStyle="bold"
         android:textSize="@dimen/card_titulo"
-        android:layout_marginLeft="@dimen/text_margin"/>
+        android:layout_marginLeft="155dp"
+        />
 
 
 
