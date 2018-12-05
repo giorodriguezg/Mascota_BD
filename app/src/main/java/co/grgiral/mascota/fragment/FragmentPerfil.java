@@ -1,22 +1,21 @@
-package co.grgiral.mascota;
+package co.grgiral.mascota.fragment;
 
-import android.app.Fragment;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.ListAdapter;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
+
+import co.grgiral.mascota.MascotaAdaptadorGV;
+import co.grgiral.mascota.R;
+import co.grgiral.mascota.pojo.Mascota;
 
 public class FragmentPerfil  extends android.support.v4.app.Fragment {
     private RecyclerView rvlistamascotas;

@@ -1,23 +1,21 @@
 package co.grgiral.mascota;
 import android.app.Activity;
-import android.app.admin.DevicePolicyManager;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import co.grgiral.mascota.pojo.Mascota;
 
 
 public class MascotaAdaptadorGV extends RecyclerView.Adapter<MascotaAdaptadorGV.MascotaViewHolder>{
 
-    public MascotaAdaptadorGV(ArrayList<Mascota> mascotasgv,Activity activity){
+    public MascotaAdaptadorGV(ArrayList<Mascota> mascotasgv, Activity activity){
         this.mascotasgv= mascotasgv;
         this.activity= activity;
     }

@@ -31,8 +31,8 @@
         <activity android:name=".ActivityContacto" />
         <activity android:name=".ActivityAcercaDe" />
         <activity android:name=".Contacto" />
-        <activity android:name=".FragmentHome" />
-        <activity android:name=".FragmentPerfil" />
+        <activity android:name=".fragment.FragmentHome" />
+        <activity android:name=".fragment.FragmentPerfil" />
         <activity android:name=".bio"></activity>
     </application>
 

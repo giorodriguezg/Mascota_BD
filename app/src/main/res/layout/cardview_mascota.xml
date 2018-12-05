@@ -42,7 +42,8 @@
                 android:background="@color/colorfondo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icons8_dog_bone_32"
-                tools:ignore="RtlCompat" />
+                tools:ignore="RtlCompat"
+                android:onClick="sumarLike"/>
 
             <TextView
                 android:id="@+id/tvNombre"

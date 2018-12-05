@@ -1,4 +1,4 @@
-package co.grgiral.mascota;
+package co.grgiral.mascota.pojo;
 
 public class Mascota {
 
@@ -12,6 +12,10 @@ public class Mascota {
         this.id = id;
         this.likes = likes;
         this.foto = foto;
+    }
+
+    public Mascota() {
+
     }
 
     public String getNombre() {

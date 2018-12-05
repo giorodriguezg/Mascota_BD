@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.grgiral.mascota.MainActivity"
+    tools:context="co.grgiral.mascota.MascotaRating"
     >
 
     <include
         android:id="@+id/miActionBar"
         layout="@layout/actionbar" />
     <android.support.v7.widget.RecyclerView
-        android:id= "@+id/rvMascotasDummy"
+        android:id= "@+id/rvMascotasDB"
         android:layout_below="@id/miActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
